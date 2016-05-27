@@ -1,1 +1,8 @@
-<h1>argos awaits your arrival</h1>
+<strong><p>
+  list of users:
+</p></strong>
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.first_name %></li>
+  <% end %>
+</ul>
