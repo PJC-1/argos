@@ -1,0 +1,7 @@
+<h1>Show Pet</h1>
+<hr>
+<p><strong>Name:</strong> <%= @pet.name %></p>
+<p><strong>Breed:</strong> <%= @pet.breed %></p>
+<p><strong>Weight:</strong> <%= @pet.weight %>lbs.</p>
+<hr>
+<p><%= link_to "view all pets for owner #{@user.email}", user_pets_path(@user) %></p>
