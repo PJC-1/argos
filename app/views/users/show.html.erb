@@ -4,3 +4,6 @@
 <p><strong>First Name: </strong><%= @user.first_name %></p>
 <p><strong>Last Name: </strong><%= @user.last_name %></p>
 <p><strong>Email: </strong><%= @user.email %></p>
+<hr>
+<p><%= link_to "add a pet", new_user_pet_path(@user) %></p>
+<p><%= link_to "view all pets for owner #{@user.email}", user_pets_path(@user) %></p>

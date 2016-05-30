@@ -4,5 +4,8 @@
 <p><strong>Breed:</strong> <%= @pet.breed %></p>
 <p><strong>Weight:</strong> <%= @pet.weight %>lbs.</p>
 <hr>
+<p><%= link_to "add a pet", new_user_pet_path(@user) %></p>
 <p><%= link_to "edit pet", edit_user_pet_path(@user, @pet) %></p>
+<p><%= link_to "delete pet", user_pet_path(@user, @pet), method: :delete %></p>
+<hr>
 <p><%= link_to "view all pets for owner #{@user.email}", user_pets_path(@user) %></p>
