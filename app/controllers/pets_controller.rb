@@ -29,6 +29,28 @@ class PetsController < ApplicationController
     @user = User.find_by(id: user_id)
   end
 
+  def edit
+    pet_id = params[:id]
+    @pet = Pet.find_by(id: pet_id)
+    user_id = params[:user_id]
+    @user = User.find_by(id: user_id)
+  end
+
+  def update
+    user_id = params[:user_id]
+    user = User.find_by(id: user_id)
+    pet_id = params[:id]
+    pet = Pet.find_by(id: pet_id)
+
+    if pet.update(pet_params)
+      flash[:notice] = "Updated successfully."
+      redirect_to user_pet_path(user, pet)
+    else
+      flash[:error] = pet.errors.full_messages.join(", ")
+      redirect_to edit_user_pet_path(user, pet)
+    end
+  end
+
   private
   def pet_params
    params.require(:pet).permit(:name, :gender, :breed, :weight, :bio)
