@@ -1,5 +1,7 @@
 <h1>Hey <%=@user.first_name%></h1>
 
+<% unless @user.avatar_url.nil? %><%= image_tag @user.avatar_url %><br /><% end %>
+
 
 <p><strong>First Name: </strong><%= @user.first_name %></p>
 <p><strong>Last Name: </strong><%= @user.last_name %></p>
