@@ -1,5 +1,6 @@
 <h1>Show Pet</h1>
 <hr>
+<%= image_tag @pet.pet_avatar_url(:display) %>
 <p><strong>Name:</strong> <%= @pet.name %></p>
 <p><strong>Breed:</strong> <%= @pet.breed %></p>
 <p><strong>Weight:</strong> <%= @pet.weight %>lbs.</p>

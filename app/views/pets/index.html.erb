@@ -2,6 +2,7 @@
 <hr>
 <% @user.pets.each do |pet| %>
   <p>
+    <%= image_tag pet.pet_avatar_url(:thumbnail) %>
     <strong><%= link_to pet.name, user_pet_path(@user, pet) %></strong>
     (<%= pet.breed %>)
   </p>

@@ -41,7 +41,9 @@ class PetsController < ApplicationController
     user = User.find_by(id: user_id)
     pet_id = params[:id]
     pet = Pet.find_by(id: pet_id)
-
+    unless pet_params != nil
+       Cloudinary::Uploader.upload(pet_params)
+    end
     if pet.update(pet_params)
       flash[:notice] = "Updated successfully."
       redirect_to user_pet_path(user, pet)
@@ -63,6 +65,6 @@ class PetsController < ApplicationController
 
   private
   def pet_params
-   params.require(:pet).permit(:name, :gender, :breed, :weight, :bio)
+   params.require(:pet).permit(:name, :gender, :breed, :weight, :bio, :pet_avatar)
   end
 end
