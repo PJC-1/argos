@@ -1,11 +1,23 @@
-<h1>All Pets for <%= @user.email %></h1>
+<h1><%= @user.first_name %>'s calendar</h1>
 <hr>
-<% @user.events.each do |event| %>
-  <p>
-    <strong><%= link_to event.name, user_event_path(@user, event) %></strong>
-    (<%= event.published_on %>)
-  </p>
-<% end %>
+
+<div id="events">
+  <h2 id="month">
+    <%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %>
+    <%= link_to ">", date: @date.next_month %>
+  </h2>
+  <%= calendar @date do |date| %>
+    <%= date.day %>
+    <% if @events_by_date[date] %>
+      <ul>
+        <% @events_by_date[date].each do |event| %>
+          <li><%= link_to event.name, user_event_path(@user, event) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
 
 <hr>
 <%= link_to "add a event", new_user_event_path(@user) %>

@@ -2,6 +2,9 @@ class EventsController < ApplicationController
   def index
     user_id = params[:user_id]
     @user = User.find_by(id: user_id)
+    @events = @user.events.all
+    @events_by_date = @events.group_by(&:published_on)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
   def new
