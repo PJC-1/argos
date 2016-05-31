@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
   root 'users#index'
-  
+
   resources :users do
     resources :pets
+  end
+
+  resources :users, only: [] do
+    resources :events
   end
 
   get '/signup' => 'users#new'
