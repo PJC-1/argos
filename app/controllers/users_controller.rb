@@ -28,14 +28,22 @@ class UsersController < ApplicationController
 
   def update
      @user = User.find_by_id(params[:id])
-     @user.update(user_params)
-     redirect_to user_path(@user)
-
+     unless user_params != nil
+        Cloudinary::Uploader.upload(user_params)
+     end
+     if current_user.id == @user.id
+        @user.update_attributes(user_params)
+        flash[:notice] = "Profile updated."
+        redirect_to user_path(@user)
+     else
+        flash[:notice] = @user.errors.full_messages
+        redirect_to edit_user_path(@user)
+     end
   end
 
   private
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :username, :password, :email)
+      params.require(:user).permit(:first_name, :last_name, :username, :password, :email, :avatar)
     end
 end

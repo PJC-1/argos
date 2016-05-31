@@ -4,10 +4,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   include Cloudinary::CarrierWave
 
+  process :convert => 'jpg'
+  process :tags => ['avatar']
 
   version :display do
     process :eager => true
-    process :resize_to_fill => [200, 200, :north]
+    process :resize_to_fill => [100, 150, :north]
   end
 
   version :thumbnail do
