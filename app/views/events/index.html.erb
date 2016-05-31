@@ -1,0 +1,12 @@
+<h1>All Pets for <%= @user.email %></h1>
+<hr>
+<% @user.events.each do |event| %>
+  <p>
+    <strong><%= link_to event.name, user_event_path(@user, event) %></strong>
+    (<%= event.published_on %>)
+  </p>
+<% end %>
+
+<hr>
+<%= link_to "add a event", new_user_event_path(@user) %>
+<%= link_to "view owner page", user_path(@user) %>

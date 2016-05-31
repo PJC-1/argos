@@ -1,0 +1,11 @@
+<h1>Show Event</h1>
+<hr>
+<p><strong>Name:</strong> <%= @event.name %></p>
+<p><strong>Published On:</strong> <%= @event.published_on %></p>
+<p><strong>Content:</strong> <%= @event.content %></p>
+<hr>
+<p><%= link_to "add an event", new_user_event_path(@user) %></p>
+<p><%= link_to "edit event", edit_user_event_path(@user, @event) %></p>
+<p><%= link_to "delete event", user_event_path(@user, @event), method: :delete %></p>
+<hr>
+<p><%= link_to "view all events for owner #{@user.email}", user_events_path(@user) %></p>
