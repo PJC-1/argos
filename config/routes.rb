@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  match :follow, to: 'follows#create', as: :follow, via: :post
+  match :unfollow, to: 'follows#destroy', as: :unfollow, via: :post
+
 end
 
 # PICTURES

@@ -6,6 +6,26 @@
 <p><strong>Last Name: </strong><%= @user.last_name %></p>
 <p><strong>Email: </strong><%= @user.email %></p>
 <hr>
+<div class="follow">
+  <% if @user.followed_by?(current_user) %>
+    <%= form_tag unfollow_path(user_id: @user.id), method: :post, remote: true do %>
+      <%= button_tag 'unfollow', class: 'btn btn-primary' %>
+    <% end %>
+  <% else %>
+    <%= form_tag follow_path(user_id: @user.id), method: :post, remote: true do %>
+      <%= button_tag 'follow', class: 'btn btn-success' %>
+    <% end %>
+  <% end %>
+</div>
+<p><%= @user.first_name %> has: <strong><%= @user.followers_count %></strong> followers</p>
+<p><%= @user.first_name %> follows: <strong><%= @user.follow_count %></strong> users</p>
+<p>Following: </p>
+  <ul>
+    <% @user.all_following.each do |follow| %>
+      <li><%= image_tag follow.avatar_url(:thumbnail) %><strong><%= follow.first_name %></strong></li>
+    <% end %>
+  </ul>
+<hr>
 <p><%= link_to "add a pet", new_user_pet_path(@user) %></p>
 <p><%= link_to "view all pets for owner #{@user.email}", user_pets_path(@user) %></p>
 <p><%= link_to "view all events for owner #{@user.email}", user_events_path(@user) %></p>

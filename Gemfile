@@ -18,6 +18,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# acts_as_follower
+gem "acts_as_follower"
+
 # jquery-ui-rails for datepicker
 gem 'jquery-ui-rails'
 
