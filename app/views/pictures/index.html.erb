@@ -2,7 +2,7 @@
 <% @pictures.each do |picture| %>
   <p>
     <strong>Title: </strong><%= picture.title %><br>
-    <%= image_tag picture.photo_url(:display) %>
+    <%= link_to cl_image_tag(picture.photo_url(:display)), "/pets/#{picture.pet_id}/pictures/#{picture.id}" %>
     <hr>
   </p>
 <% end %>

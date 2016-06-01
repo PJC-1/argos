@@ -2,6 +2,7 @@ class PicturesController < ApplicationController
 
   def index
     @pictures = Picture.all.shuffle
+    @users = User.all
   end
 
   def new

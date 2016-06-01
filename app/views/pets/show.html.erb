@@ -10,3 +10,4 @@
 <p><%= link_to "delete pet", user_pet_path(@user, @pet), method: :delete %></p>
 <hr>
 <p><%= link_to "view all pets for owner #{@user.email}", user_pets_path(@user) %></p>
+<p><%= link_to "view all pets pictures for owner #{@user.email}", pet_pictures_path(@pet) %></p>
