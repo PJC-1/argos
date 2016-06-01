@@ -1,0 +1,11 @@
+<%= form_for [@pet, @picture]  do |f| %>
+  <div class="form-group">
+    <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :photo, class: "form-control", placeholder: "Photo" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Save Photo", class: "btn btn-block btn-success" %>
+  </div>
+<% end %>

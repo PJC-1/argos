@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :events
   end
 
+  resources :pets, only: [] do
+    resources :pictures
+  end
+
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -17,6 +21,16 @@ Rails.application.routes.draw do
 
 end
 
+# PICTURES
+# pet_pictures GET    /pets/:pet_id/pictures(.:format)          pictures#index
+#              POST   /pets/:pet_id/pictures(.:format)          pictures#create
+# new_pet_picture GET    /pets/:pet_id/pictures/new(.:format)      pictures#new
+# edit_pet_picture GET    /pets/:pet_id/pictures/:id/edit(.:format) pictures#edit
+#  pet_picture GET    /pets/:pet_id/pictures/:id(.:format)      pictures#show
+#              PATCH  /pets/:pet_id/pictures/:id(.:format)      pictures#update
+#              PUT    /pets/:pet_id/pictures/:id(.:format)      pictures#update
+#              DELETE /pets/:pet_id/pictures/:id(.:format)      pictures#destroy
+#
 
 # PETS
 # user_pets GET    /users/:user_id/pets(.:format)            pets#index

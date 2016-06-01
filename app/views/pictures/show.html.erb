@@ -1,0 +1,6 @@
+<h2>testing picture show</h2>
+<strong>Title: </strong><%= @picture.title %><br>
+<%= image_tag @picture.photo_url(:display) %>
+<%= link_to pet_picture_path(@pet, @picture), data: {:confirm=>'Are you sure you want to delete this image?'}, method: :delete, class: "btn btn-small btn-danger pull-right" do %>
+  <span class="glyphicon glyphicon-remove"></span>
+<% end %>

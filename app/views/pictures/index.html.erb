@@ -1,0 +1,8 @@
+<h3>picture index</h3><br><br>
+<% @pictures.each do |picture| %>
+  <p>
+    <strong>Title: </strong><%= picture.title %><br>
+    <%= image_tag picture.photo_url(:display) %>
+    <hr>
+  </p>
+<% end %>
