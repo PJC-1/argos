@@ -1,0 +1,7 @@
+
+
+<% if activity.trackable %>
+  started following <%= link_to activity.trackable.followable.first_name, "/users/#{activity.trackable.followable_id}" %>
+<% else %>
+  which has since been removed
+<% end %>

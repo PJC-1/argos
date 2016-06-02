@@ -1,0 +1,7 @@
+updated pet
+
+<% if activity.trackable %>
+  on <%= link_to activity.trackable.name, "/users/#{activity.trackable.user_id}/pets/#{activity.trackable.id}" %>
+<% else %>
+  which has since been removed
+<% end %>
