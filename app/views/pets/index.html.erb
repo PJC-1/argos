@@ -1,13 +1,15 @@
-<h1>All Pets for <%= @user.email %></h1>
-<hr>
-<% @user.pets.each do |pet| %>
-  <p>
-    <%= image_tag pet.pet_avatar_url(:thumbnail) %>
-    <strong><%= link_to pet.name, user_pet_path(@user, pet) %></strong>
-    (<%= pet.breed %>)
-  </p>
-<% end %>
+<h2><%= @user.first_name %>'s Pets'</h2>
 
-<hr>
-<%= link_to "add a pet", new_user_pet_path(@user) %>
-<%= link_to "view owner page", user_path(@user) %>
+
+<div class="transitions-enabled" id="pets">
+  <% @user.pets.each do |pet| %>
+    <div class="box panel panel-default">
+      <%= image_tag pet.pet_avatar_url %>
+      <div class="panel-body">
+        <%= link_to pet.name, user_pet_path(@user, pet) %>
+        <%= pet.breed %>
+        <%= link_to pet.name, user_pet_path(@user, pet),class: "btn btn-info" %>
+      </div>
+    </div>
+  <% end %>
+</div>

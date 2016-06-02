@@ -1,3 +1,23 @@
 // Place all the styles related to the pets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#pets {
+  margin: 0 auto;
+}
+
+.box {
+  margin: 3px;
+  width: 250px;
+}
+
+.box img {
+  width: 100%;
+  box-shadow: 2px 2px 2px #888888;
+  -webkit-box-shadow: 2px 2px 2px #888888;
+}
+.box img:hover{
+  opacity: 0.6;
+}
+.user-img {
+  border-radius: 50%;
+}
