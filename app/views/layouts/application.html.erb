@@ -21,7 +21,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-form pull-right" role="search">
         <% if current_user %>
-        <li><%= link_to "Add A Pet", new_user_pet_path(@user) %></li>
+        <li><%= link_to "Add A Pet", new_user_pet_path(current_user) %></li>
         <li><%= link_to "Profile", user_path(current_user)%></li>
         <li><%= link_to "Edit", edit_user_path(current_user)%></li>
         <li><%= link_to "Logout", '/logout' %></li>
