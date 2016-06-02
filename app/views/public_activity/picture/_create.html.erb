@@ -1,0 +1,6 @@
+posted a picture
+<% if activity.trackable %>
+  <%= link_to cl_image_tag(activity.trackable.photo_url(:thumbnail)), "/pets/#{activity.trackable.pet_id}/pictures/#{activity.trackable.id}" %>
+<% else %>
+  which has since been removed
+<% end %>

@@ -19,7 +19,9 @@
 <p>Following: </p>
   <ul>
     <% @user.all_following.each do |follow| %>
-      <li><%= image_tag follow.avatar_url(:thumbnail) %><strong><%= follow.first_name %></strong></li>
+      <li><strong><%= follow.first_name %></strong></li>
+      <%= link_to cl_image_tag(follow.avatar_url(:thumbnail)), "/users/#{follow.id}" %>
+      <hr>  
     <% end %>
   </ul>
 <hr>

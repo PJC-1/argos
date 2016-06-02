@@ -3,6 +3,8 @@
 </p></strong>
 <ul>
   <% @users.each do |user| %>
-    <li><%= user.first_name %></li>
+    <%= user.first_name %>
+    <%= link_to cl_image_tag(user.avatar_url(:thumbnail)), "/users/#{user.id}" %>
+    <hr>
   <% end %>
 </ul>

@@ -13,7 +13,7 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find_by_id(params[:id])
-    @pet = current_user.pets.find_by_id(params[:pet_id])
+    @pet = Pet.find_by_id(params[:pet_id])
   end
 
   def create

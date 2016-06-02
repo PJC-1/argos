@@ -1,7 +1,8 @@
 updated pet
 
 <% if activity.trackable %>
-  on <%= link_to activity.trackable.name, "/users/#{activity.trackable.user_id}/pets/#{activity.trackable.id}" %>
+  <%= link_to cl_image_tag(activity.trackable.pet_avatar_url(:thumbnail)), "/users/#{activity.trackable.user_id}/pets/#{activity.trackable.id}" %>
+  <%= link_to activity.trackable.name, "/users/#{activity.trackable.user_id}/pets/#{activity.trackable.id}" %>
 <% else %>
   which has since been removed
 <% end %>
