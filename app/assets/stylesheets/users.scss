@@ -24,10 +24,15 @@ header .header-content .header-content-inner h1 {
     margin-top: 45px;
     margin-bottom: 0;
     text-transform: uppercase;
-    font-weight: bolder;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 900;
     font-size: 140px;
     color: tan;
     text-shadow: 6px 6px black;
+}
+
+.worksans {
+  font-family: 'Work Sans', sans-serif;
 }
 
 header .header-content .header-content-inner hr {
@@ -66,4 +71,40 @@ header .header-content .header-content-inner p {
 
 body {
   background-color: rgba(239, 187, 0, 0.06);
+}
+
+.navbar-brand {
+  font-size: 36px;
+  font-weight: 100;
+}
+
+.navright {
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.fontweightone {
+  font-weight: 100;
+}
+
+.text-muted {
+  color: #212121;
+  font-size: 27px;
+}
+
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 35px;
+    font-weight: 100;
+    color: inherit;
+}
+
+.glyphicon {
+  font-size: 27px;
+}
+
+
+.textsplash {
+  font-size: 20px;
 }

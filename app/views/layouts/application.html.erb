@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "application", 'https://fonts.googleapis.com/css?family=Work+Sans:400,100,900', :media => "all" %>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
@@ -19,7 +20,7 @@
       </button>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-form pull-right" role="search">
+      <ul class="nav navbar-nav navbar-form pull-right navright" role="search">
         <% if current_user %>
         <li><%= link_to "Add A Pet", new_user_pet_path(current_user) %></li>
         <li><%= link_to "Profile", user_path(current_user)%></li>

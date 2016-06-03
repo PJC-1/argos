@@ -1,10 +1,14 @@
-<h1>Friend's Activities</h1>
+<h1 class="centeredtexto fontweightone">Friend's Activities</h1>
+<br>
+<br>
 <% @activities.each do |activity| %>
-  <div class="activity">
+  <div class="well well-lg text-center">
     <%= link_to cl_image_tag(activity.owner.avatar_url(:thumbnail)), activity.owner if activity.owner %>
     <%= link_to activity.owner.first_name, activity.owner if activity.owner %>
 
-    <div class="rendered"><%= render_activity activity %></div>
+
+      <%= render_activity activity %>
+
   </div>
 <% end %>
 <br>
