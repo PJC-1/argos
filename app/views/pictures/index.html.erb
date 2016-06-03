@@ -1,8 +1,12 @@
 <h3>picture index</h3><br><br>
-<% @pictures.each do |picture| %>
-  <p>
-    <strong>Title: </strong><%= picture.title %><br>
-    <%= link_to cl_image_tag(picture.photo_url(:display)), "/pets/#{picture.pet_id}/pictures/#{picture.id}" %>
-    <hr>
-  </p>
-<% end %>
+
+
+    <% @pictures.each do |picture| %>
+      <% if picture.pet_id == @pet.id %>
+        <p>
+          <strong>Title: </strong><%= picture.title %><br>
+          <%= link_to cl_image_tag(picture.photo_url(:display)), "/pets/#{picture.pet_id}/pictures/#{picture.id}" %>
+          <hr>
+        </p>
+      <% end %>
+    <% end %>

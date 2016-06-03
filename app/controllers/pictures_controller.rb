@@ -2,7 +2,9 @@ class PicturesController < ApplicationController
 
   def index
     @pictures = Picture.all.shuffle
-    @users = User.all
+    pet_id = params[:pet_id]
+    @pet = Pet.find_by(id: pet_id)
+
   end
 
   def new
@@ -39,6 +41,10 @@ class PicturesController < ApplicationController
 
 
   private
+  def pet_pictures
+    Picture.find(pet_id:@pet.id)
+  end
+
   def picture_params
     params.require(:picture).permit(:photo, :title)
   end

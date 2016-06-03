@@ -53,6 +53,9 @@ gem 'bcrypt', '~> 3.1.7'
 # binding_of_caller used for better errors
 gem "binding_of_caller"
 
+
+gem 'bootswatch-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
