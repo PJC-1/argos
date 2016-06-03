@@ -1,31 +1,44 @@
-<h1>Hey <%=@user.first_name%></h1>
+<section id="team" class="bg-light-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <%= image_tag @user.avatar_url(:display) %>
+        <h2 class="section-heading">Howdy <%=@user.first_name%></h2>
+        <h3 class="section-subheading text-muted">Welcome back <%= @user.first_name %> <%= @user.last_name %>.</h3>
+        <hr>
+        <p class="text-muted"><%= @user.first_name %> has: <strong><%= @user.followers_count %></strong> followers</p>
+        <p class="text-muted"><%= @user.first_name %> follows: <strong><%= @user.follow_count %></strong> users</p>
+        <div class="follow">
+          <%= form_tag unfollow_path(user_id: @user.id), method: :post, remote: true do %>
+          <%= button_tag 'unfollow', class: 'btn btn-primary' %>
+          <% end %>
+          <%= form_tag follow_path(user_id: @user.id), method: :post, remote: true do %>
+          <%= button_tag 'follow', class: 'btn btn-success' %>
+          <% end %>
+          <br>
+          <p>Following:
+            <% @user.all_following.each do |follow| %>
+              <strong><%= follow.first_name %></strong>
+              <%= link_to cl_image_tag(follow.avatar_url(:thumbnail)), "/users/#{follow.id}" %>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="team-member text-center">
 
-
-<%= image_tag @user.avatar_url(:display) %>
-<p><strong>First Name: </strong><%= @user.first_name %></p>
-<p><strong>Last Name: </strong><%= @user.last_name %></p>
-<p><strong>Email: </strong><%= @user.email %></p>
-<hr>
-<div class="follow">
-    <%= form_tag unfollow_path(user_id: @user.id), method: :post, remote: true do %>
-      <%= button_tag 'unfollow', class: 'btn btn-primary' %>
-    <% end %>
-    <%= form_tag follow_path(user_id: @user.id), method: :post, remote: true do %>
-      <%= button_tag 'follow', class: 'btn btn-success' %>
-    <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="inline">
+  <p class="inline"><%= link_to "news feed", activities_path, class: "btn btn-info" %><%= link_to "add a pet", new_user_pet_path(@user), class: "btn btn-info" %><%= link_to "all pets", user_pets_path(@user), class: "btn btn-info" %><%= link_to "#{@user.first_name}'s calendar", user_events_path(@user), class: "btn btn-info" %></p>
 </div>
-<p><%= @user.first_name %> has: <strong><%= @user.followers_count %></strong> followers</p>
-<p><%= @user.first_name %> follows: <strong><%= @user.follow_count %></strong> users</p>
-<p>Following: </p>
-  <ul>
-    <% @user.all_following.each do |follow| %>
-      <li><strong><%= follow.first_name %></strong></li>
-      <%= link_to cl_image_tag(follow.avatar_url(:thumbnail)), "/users/#{follow.id}" %>
-      <hr>  
-    <% end %>
-  </ul>
-<hr>
-<p><%= link_to "news feed", activities_path %></p>
-<p><%= link_to "add a pet", new_user_pet_path(@user) %></p>
-<p><%= link_to "view all pets for owner #{@user.email}", user_pets_path(@user) %></p>
-<p><%= link_to "view all events for owner #{@user.email}", user_events_path(@user) %></p>

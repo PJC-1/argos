@@ -5,7 +5,8 @@ header {
     text-align: center;
     color: #000000;
     background-image: url(https://images.unsplash.com/reserve/UzWklzFdRBSbkRKhEnvc_1-6128.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=7640fe4660acee3fa5bb00f8880ae46c);
-    background-position: center;
+    background-position: center -75px;
+    background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -20,11 +21,13 @@ header .header-content {
 }
 
 header .header-content .header-content-inner h1 {
-    margin-top: 0;
+    margin-top: 45px;
     margin-bottom: 0;
     text-transform: uppercase;
-    font-weight: 100;
-    font-size: 125px;
+    font-weight: bolder;
+    font-size: 140px;
+    color: tan;
+    text-shadow: 6px 6px black;
 }
 
 header .header-content .header-content-inner hr {
@@ -38,6 +41,9 @@ header .header-content .header-content-inner p {
     color: rgba(255,255,255,.7);
 }
 
+.btn {
+  background-color: #D2B48C;
+}
 
 .centered-form {
     margin-top: 120px;
@@ -46,4 +52,18 @@ header .header-content .header-content-inner p {
 
 .centered-form .panel {
     box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
+#team .img-circle {
+  margin-left: 45%;
+  padding-top: 35px;
+}
+
+.inline {
+   display:block;
+   margin:auto 21%;
+}
+
+body {
+  background-color: rgba(239, 187, 0, 0.06);
 }

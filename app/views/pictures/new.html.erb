@@ -1,12 +1,26 @@
-<%= form_for [@pet, @picture]  do |f| %>
-  <div class="form-group">
-    <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
-  </div>
-  <div class="form-group">
-    <%= f.file_field :photo, class: "form-control", placeholder: "Photo" %>
-  </div>
-  <div class="form-group">
-    <%= f.submit "Save Photo", class: "btn btn-block btn-success" %>
-  </div>
-<% end %>
-<%= link_to "cancel", pet_pictures_path(@pet) %>
+
+
+
+<div class="container" id="newpictureform">
+       <div class="row centered-form">
+           <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+               <div class="panel panel-default">
+                   <div class="panel-heading">
+                       <h3 class="panel-title text-center">Upload Picture</h3>
+                   </div>
+                   <div class="panel-body">
+                       <%= form_for [@pet, @picture]  do |f| %>
+                           <div class="form-group">
+                               <%= f.text_field :title, id:"title", class:"form-control input-sm", placeholder:"Title" %>
+                           </div>
+                           <div class="form-group">
+                               <%= f.file_field :photo, id:"photo", class:"form-control input-sm", placeholder:"Photo" %>
+                           </div>
+                           <%= f.submit "Submit", class:"btn btn-info btn-block" %>
+                           <%= link_to "cancel", pet_pictures_path(@pet), class:"btn btn-info btn-block" %>
+                       <% end %>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>

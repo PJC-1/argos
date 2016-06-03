@@ -1,23 +1,36 @@
-<%= form_for [@user, @pet]  do |f| %>
-  <div class="form-group">
-    <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true %>
-  </div>
-  <div class="form-group">
-    <%= f.text_field :gender, class: "form-control", placeholder: "Gender" %>
-  </div>
-  <div class="form-group">
-    <%= f.text_field :breed, class: "form-control", placeholder: "Breed" %>
-  </div>
-  <div class="form-group">
-    <%= f.text_field :weight, class: "form-control", placeholder: "Weight" %>
-  </div>
-  <div class="form-group">
-    <%= f.text_area :bio, class: "form-control", placeholder: "Bio" %>
-  </div>
-  <div class="form-group">
-    <%= f.file_field :pet_avatar, class: "form-control", placeholder: "Avatar" %>
-  </div>
-  <div class="form-group">
-    <%= f.submit "Save Pet", class: "btn btn-block btn-success" %>
-  </div>
-<% end %>
+<div class="container" id="signupform">
+       <div class="row centered-form">
+           <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+               <div class="panel panel-default">
+                   <div class="panel-heading">
+                       <h3 class="panel-title text-center">Please Register</h3>
+                   </div>
+                   <div class="panel-body">
+                       <%= form_for [@user, @pet]  do |f| %>
+                           <div class="form-group">
+                               <%= f.text_field :name, id:"name", class:"form-control input-sm", placeholder:"Name" %>
+                           </div>
+
+                           <div class="form-group">
+                               <%= f.text_field :gender, id:"gender", class:"form-control input-sm", placeholder:"Gender" %>
+                           </div>
+
+                           <div class="form-group">
+                               <%= f.text_field :breed, id:"breed", class:"form-control input-sm", placeholder:"Breed" %>
+                           </div>
+
+                           <div class="form-group">
+                               <%= f.text_area :bio, id:"bio", class:"form-control input-sm", placeholder:"Bio" %>
+                           </div>
+
+                           <div class="form-group">
+                               <%= f.file_field :pet_avatar, id:"pet_avatar", class:"form-control input-sm", placeholder:"Pet Avatar" %>
+                           </div>
+
+                           <%= f.submit "Submit", class:"btn btn-info btn-block" %>
+                       <% end %>
+                  </div>
+              </div>
+        </div>
+    </div>
+</div>

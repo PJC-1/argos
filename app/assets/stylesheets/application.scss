@@ -3,13 +3,12 @@
 *= require jquery-ui/datepicker
 *= require 'masonry/transitions'
 *= require 'masonry/infinitescroll'
-*= require_tree .
 */
  @import "bootstrap-sprockets";
  @import "bootswatch/paper/variables";
  @import "bootstrap";
- body { padding-top: 60px; }
  @import "bootswatch/paper/bootswatch";
  @import "users";
  @import "events";
  @import "pets";
+ @import "activities";
