@@ -1,5 +1,11 @@
+<br>
 <h1 class="calendartitle"><%= @user.first_name %>'s calendar</h1>
 <hr>
+<br>
+<%= link_to "add a event", new_user_event_path(@user), class: "btn pull-right" %>
+<%= link_to "view owner page", user_path(@user), class: "btn pull-right" %>
+<br>
+<br>
 
 <div id="events">
   <h2 id="month">
@@ -20,5 +26,3 @@
 </div>
 
 <hr>
-<%= link_to "add a event", new_user_event_path(@user) %>
-<%= link_to "view owner page", user_path(@user) %>
