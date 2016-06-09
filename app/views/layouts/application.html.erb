@@ -25,10 +25,10 @@
         <li><%= link_to "Add A Pet", new_user_pet_path(current_user) %></li>
         <li><%= link_to "Profile", user_path(current_user)%></li>
         <li><%= link_to "Edit", edit_user_path(current_user)%></li>
-        <li><%= link_to "Logout", '/logout' %></li>
+        <li><%= link_to "Logout", logout_path %></li>
         <% else %>
-        <li><%= link_to 'Login', '/login' %></li>
-        <li><%= link_to 'Signup', '/signup' %></li>
+        <li><%= link_to 'Login', login_path %></li>
+        <li><%= link_to 'Signup', new_user_path %></li>
         <% end %>
         <li><%= link_to "Users", users_path%></li>
       </ul>
@@ -46,6 +46,11 @@
     </div>
 </header>
 
+<% flash.each do |name, msg| %>
+  <p>
+    <small> <%= name.capitalize %>: <%= msg %> </small>
+  </p>
+<% end %>
 
 <%= yield %>
 

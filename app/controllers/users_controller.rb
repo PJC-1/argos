@@ -2,24 +2,30 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    render :index
   end
 
   def new
-
-  end
-
-  def show
-    @user = User.find(params[:id])
+    @user = User.new
+    render :new
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
-      session[:user_id] = user.id
-      redirect_to '/'
+    @user = User.create(user_params)
+
+    if @user.save
+      flash[:success] = "Welcome to Argos!"
+      login(@user)
+      redirect_to user_path(@user)
     else
-      redirect_to '/signup'
+      flash[:error] = @user.errors.full_messages.join(", ")
+      redirect_to new_user_path
     end
+  end
+
+  def show
+    @user = User.find_by_id(params[:id])
+    render :show
   end
 
   def edit
