@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-
+  before_action :authorize, only: [:create, :new, :edit, :update, :destroy]
   def index
     @pictures = Picture.all.shuffle
     pet_id = params[:pet_id]

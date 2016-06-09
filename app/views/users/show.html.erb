@@ -12,21 +12,23 @@
         <p class="text-muted fontweightone"><%= @user.first_name %> has: <strong><%= @user.followers_count %></strong> followers</p>
         <p class="text-muted fontweightone"><%= @user.first_name %> follows: <strong><%= @user.follow_count %></strong> users</p>
         <div class="follow">
-          <%= form_tag unfollow_path(user_id: @user.id), method: :post, remote: true do %>
-            <%= button_tag 'unfollow', class: 'btn btn-primary' %>
-          <% end %>
-          <%= form_tag follow_path(user_id: @user.id), method: :post, remote: true do %>
-            <%= button_tag 'follow', class: 'btn btn-success' %>
-          <% end %>
-          <br>
-          <br>
-          <p>Following:
-            <% @user.all_following.each do |follow| %>
-              <strong><%= follow.first_name %></strong>
-              <%= link_to cl_image_tag(follow.avatar_url(:thumbnail)), "/users/#{follow.id}" %>
+          <% if current_user %>
+            <%= form_tag unfollow_path(user_id: @user.id), method: :post, remote: true do %>
+              <%= button_tag 'unfollow', class: 'btn btn-primary' %>
             <% end %>
-          </p>
-          <br>
+            <%= form_tag follow_path(user_id: @user.id), method: :post, remote: true do %>
+              <%= button_tag 'follow', class: 'btn btn-success' %>
+            <% end %>
+          <% end %>
+            <br>
+            <br>
+              <p>Following:
+                <% @user.all_following.each do |follow| %>
+                  <strong><%= follow.first_name %></strong>
+                  <%= link_to cl_image_tag(follow.avatar_url(:thumbnail)), "/users/#{follow.id}" %>
+                <% end %>
+              </p>
+            <br>
         </div>
       </div>
     </div>
@@ -35,7 +37,11 @@
 <br>
 <br>
 <div class="inline">
-  <p class="inline"><%= link_to "news feed", activities_path, class: "btn btn-info" %><%= link_to "add a pet", new_user_pet_path(@user), class: "btn btn-info" %><%= link_to "all pets", user_pets_path(@user), class: "btn btn-info" %><%= link_to "calendar", user_events_path(@user), class: "btn btn-info" %></p>
+  <% if current_user.id == @user.id %>
+    <p class="inline"><%= link_to "add a pet", new_user_pet_path(@user), class: "btn btn-info" %><%= link_to "all pets", user_pets_path(@user), class: "btn btn-info" %><%= link_to "calendar", user_events_path(@user), class: "btn btn-info" %></p>
+  <% else %>
+    <p class="inline"><%= link_to "all pets", user_pets_path(@user), class: "btn btn-info" %></p>
+  <% end %>
 </div>
 <br>
 <br>

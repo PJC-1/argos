@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  before_action :authorize, only: [:create, :new, :edit, :update, :destroy]
   def index
     user_id = params[:user_id]
     @user = User.find_by(id: user_id)

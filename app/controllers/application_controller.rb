@@ -6,4 +6,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   include SessionsHelper
+
+private
+
+  def authorize
+    redirect_to login_path, alert: "Not authorized" if current_user == nil
+  end
+
 end

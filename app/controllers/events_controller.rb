@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :authorize
+
   def index
     user_id = params[:user_id]
     @user = User.find_by(id: user_id)
