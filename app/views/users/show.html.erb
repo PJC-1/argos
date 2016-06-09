@@ -12,12 +12,13 @@
         <p class="text-muted fontweightone"><%= @user.first_name %> has: <strong><%= @user.followers_count %></strong> followers</p>
         <p class="text-muted fontweightone"><%= @user.first_name %> follows: <strong><%= @user.follow_count %></strong> users</p>
         <div class="follow">
-          <% if current_user %>
+          <% if current_user.id == @user.id%>
+          <% else %>
             <%= form_tag unfollow_path(user_id: @user.id), method: :post, remote: true do %>
-              <%= button_tag 'unfollow', class: 'btn btn-primary' %>
+            <%= button_tag 'unfollow', class: 'btn btn-primary' %>
             <% end %>
             <%= form_tag follow_path(user_id: @user.id), method: :post, remote: true do %>
-              <%= button_tag 'follow', class: 'btn btn-success' %>
+            <%= button_tag 'follow', class: 'btn btn-success' %>
             <% end %>
           <% end %>
             <br>
