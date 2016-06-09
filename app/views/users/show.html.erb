@@ -39,6 +39,7 @@
 <div class="inline">
   <% if current_user.id == @user.id %>
     <p class="inline"><%= link_to "add a pet", new_user_pet_path(@user), class: "btn btn-info" %><%= link_to "all pets", user_pets_path(@user), class: "btn btn-info" %><%= link_to "calendar", user_events_path(@user), class: "btn btn-info" %></p>
+    <div class="inner"><%= button_to "Delete Profile", destroy_user_path(@user),data: {:confirm=>'Are you sure you want to delete your profile?'}, :method => 'delete', class: "btn btn-small btn-danger" %></div>
   <% else %>
     <p class="inline"><%= link_to "all pets", user_pets_path(@user), class: "btn btn-info" %></p>
   <% end %>
