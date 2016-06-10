@@ -1,0 +1,18 @@
+// Place all the styles related to the splashs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Source+Serif+Pro);
+.dropy {
+  width: 86%;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: Source Serif Pro, serif;
+}
+#dropcap { initial-letter: 3;  color: red; }
+p { line-height: 1.5; font-size: 3rem; }
+
+@media all and (max-width: 600px) {
+#dropcap { initial-letter: 2; }
+p { font-size: 1.5rem; }
+.dropy { margin-top: 4rem; }
+}
