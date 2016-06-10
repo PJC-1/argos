@@ -3,6 +3,7 @@ class PetsController < ApplicationController
   def index
     user_id = params[:user_id]
     @user = User.find_by(id: user_id)
+    @pets = @user.pets.paginate(:page => params[:page], :per_page => 10)
   end
 
   def new

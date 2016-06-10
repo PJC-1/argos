@@ -1,11 +1,17 @@
 <header class="banner">
-	<h1>Their are currently: <%= @users.length %></h1>
+	<h1>Their are currently: <%= @users.length %> users</h1>
 </header>
 <br>
-<ul>
-  <% @users.each do |user| %>
-    <%= user.first_name %>
-    <%= link_to cl_image_tag(user.avatar_url(:thumbnail)), "/users/#{user.id}" %>
-    <hr>
+
+<div class="transitions-enabled" id="pets">
+	<% @users.each do |user| %>
+	    <div class="box panel panel-default">
+				<%= link_to cl_image_tag(user.avatar_url(:thumbnail)), "/users/#{user.id}" %>
+	      <div class="panel-body">
+	      	<strong>Name: </strong><%= user.first_name %><br>
+	      </div>
+	    </div>
   <% end %>
-</ul>
+</div>
+
+<%= will_paginate @users %>

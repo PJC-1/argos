@@ -3,14 +3,17 @@
 </header>
 <br>
 
+<div class="transitions-enabled" id="pets">
+	<% @pictures.each do |picture| %>
+		<% if picture.pet_id == @pet.id %>
+	    <div class="box panel panel-default">
+	      <%= link_to cl_image_tag(picture.photo_url(:display)), "/pets/#{picture.pet_id}/pictures/#{picture.id}" %>
+	      <div class="panel-body">
+	      	<strong>Title: </strong><%= picture.title %><br>
+	      </div>
+	    </div>
+		<% end %>
+  <% end %>
+</div>
 
-
-    <% @pictures.each do |picture| %>
-      <% if picture.pet_id == @pet.id %>
-        <p>
-          <strong>Title: </strong><%= picture.title %><br>
-          <%= link_to cl_image_tag(picture.photo_url(:display)), "/pets/#{picture.pet_id}/pictures/#{picture.id}" %>
-          <hr>
-        </p>
-      <% end %>
-    <% end %>
+<%= will_paginate @pictures %>

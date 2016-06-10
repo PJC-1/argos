@@ -17,4 +17,6 @@
   <% end %>
 </ol>
 
-<br><%= link_to "back to profile", user_path(current_user)%>
+<br><%= link_to "back to profile", user_path(current_user), class: "btn btn-default"%><br>
+
+<%= will_paginate @activities %>

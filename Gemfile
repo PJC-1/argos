@@ -18,6 +18,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# for pagination
+gem 'will_paginate', '~> 3.1.0'
+
 # for the news feed
 gem 'public_activity'
 

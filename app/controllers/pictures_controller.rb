@@ -1,10 +1,10 @@
 class PicturesController < ApplicationController
   before_action :authorize, only: [:create, :new, :edit, :update, :destroy]
+
   def index
-    @pictures = Picture.all.shuffle
+    @pictures = Picture.all.paginate(:page => params[:page], :per_page => 10)
     pet_id = params[:pet_id]
     @pet = Pet.find_by(id: pet_id)
-
   end
 
   def new
@@ -37,7 +37,6 @@ class PicturesController < ApplicationController
       redirect_to user_pets_path(current_user)
     end
   end
-
 
 
   private
