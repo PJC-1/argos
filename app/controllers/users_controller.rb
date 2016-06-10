@@ -26,7 +26,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-    render :show
+    if current_user != nil
+      render :show
+    else
+      redirect_to users_path
+    end
   end
 
   def edit
