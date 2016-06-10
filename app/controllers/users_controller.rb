@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     if current_user != nil
       render :show
     else
+      flash[:error] = "You are not authorized to preform this function."
       redirect_to users_path
     end
   end
