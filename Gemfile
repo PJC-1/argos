@@ -30,10 +30,10 @@ gem "acts_as_follower"
 # jquery-ui-rails for datepicker
 gem 'jquery-ui-rails'
 
-# carrierwave
+# works with cloudinary
 gem 'carrierwave'
 
-# cloudinary
+# for photo upload
 gem 'cloudinary'
 
 # masonry-rails
