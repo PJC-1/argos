@@ -1,16 +1,21 @@
-<h1 class="centeredtexto fontweightone">Friend's Activities</h1>
+<header class="banner">
+	<h1>NEWS FEED</h1>
+</header>
 <br>
-<br>
-<% @activities.each do |activity| %>
-  <div class="well well-lg text-center">
-    <%= link_to cl_image_tag(activity.owner.avatar_url(:thumbnail)), activity.owner if activity.owner %>
-    <%= link_to activity.owner.first_name, activity.owner if activity.owner %>
 
+<ol class="activity-feed">
+  <% @activities.each do |activity| %>
 
-      <%= render_activity activity %>
+  	<li class="feed-item" data-content="" data-time="<%= activity.created_at.strftime('%l:%M %B %-d') %>" data-color="green">
+  		<section>
+  			<label for="expand_4">
+  				<b><%= link_to cl_image_tag(activity.owner.avatar_url(:thumbnail)), activity.owner if activity.owner %>&nbsp;&nbsp;&nbsp;<%= link_to activity.owner.first_name, activity.owner if activity.owner %>&nbsp;</b>
+          <%= render_activity activity %>
+  			</label>
+  		</section>
+  	</li>
 
-  </div>
-<% end %>
-<br>
-<hr>
+  <% end %>
+</ol>
+
 <br><%= link_to "back to profile", user_path(current_user)%>

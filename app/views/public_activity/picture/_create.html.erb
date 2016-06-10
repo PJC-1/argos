@@ -1,6 +1,8 @@
 posted a picture
 <% if activity.trackable %>
-  <%= link_to cl_image_tag(activity.trackable.photo_url(:thumbnail)), "/pets/#{activity.trackable.pet_id}/pictures/#{activity.trackable.id}" %>
+  <span class="glyphicon glyphicon-film" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;<b><%= link_to cl_image_tag(activity.trackable.photo_url(:thumbnail)), "/pets/#{activity.trackable.pet_id}/pictures/#{activity.trackable.id}" %></b>
+  <br>
 <% else %>
-  which has since been removed
+  <b>&nbsp;&nbsp;<span class="glyphicon glyphicon-alert" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;which has since been removed<b>
+  <br>
 <% end %>

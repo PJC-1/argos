@@ -1,4 +1,9 @@
-<h2>testing picture show</h2>
+<header class="banner">
+	<h1><%= @picture.title %></h1>
+</header>
+<br>
+
+
 <strong>Title: </strong><%= @picture.title %><br>
 <%= image_tag @picture.photo_url(:display) %>
 <%= @picture.pet.name %>

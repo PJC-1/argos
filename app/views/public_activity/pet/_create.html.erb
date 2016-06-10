@@ -1,8 +1,9 @@
-added pet
+added pet&nbsp;&nbsp;
 
 <% if activity.trackable %>
-  <%= link_to cl_image_tag(activity.trackable.pet_avatar_url(:thumbnail)), "/users/#{activity.trackable.user_id}/pets/#{activity.trackable.id}" %>
-  <%= link_to activity.trackable.name, "/users/#{activity.trackable.user_id}/pets/#{activity.trackable.id}" %>
+    &nbsp;&nbsp;<span class="glyphicon glyphicon-saved" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;<b><%= link_to cl_image_tag(activity.trackable.pet_avatar_url(:thumbnail)), "/users/#{activity.trackable.user_id}/pets/#{activity.trackable.id}" %> &nbsp;&nbsp; <%= link_to activity.trackable.name, "/users/#{activity.trackable.user_id}/pets/#{activity.trackable.id}" %></b>
+  <br>
 <% else %>
-  which has since been removed
+  <b>&nbsp;&nbsp;<span class="glyphicon glyphicon-alert" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;which has since been removed</b>
+  <br>
 <% end %>

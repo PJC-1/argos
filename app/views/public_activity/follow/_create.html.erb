@@ -1,9 +1,9 @@
+&nbsp;&nbsp;started following&nbsp;&nbsp;
 
-started following
 
 <% if activity.trackable %>
-  <%= link_to cl_image_tag(activity.trackable.followable.avatar_url(:thumbnail)), "/users/#{activity.trackable.followable_id}" %>
-  <%= link_to activity.trackable.followable.first_name, "/users/#{activity.trackable.followable_id}" %>
+  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;<b><%= link_to cl_image_tag(activity.trackable.followable.avatar_url(:thumbnail)), "/users/#{activity.trackable.followable_id}" %>&nbsp;&nbsp;&nbsp;<%= link_to activity.trackable.followable.first_name, "/users/#{activity.trackable.followable_id}" %></b>
+  <br>
 <% else %>
-  which has since been removed
+  <b>&nbsp;&nbsp;<span class="glyphicon glyphicon-alert" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;which has since been removed</b>
 <% end %>

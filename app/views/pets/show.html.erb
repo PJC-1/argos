@@ -1,5 +1,8 @@
-<h1 class="fontweightone">Show Pet</h1>
-<hr>
+<header class="banner">
+	<h1><%= @pet.name %>'s Profile</h1>
+</header>
+<br>
+
 <%= image_tag @pet.pet_avatar_url(:display) %>
 <div class="fontweightone petshowtext">
   <p>Name: <%= @pet.name %></p>
