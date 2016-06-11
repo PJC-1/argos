@@ -67,7 +67,7 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     if current_user == @user
       @user.destroy
-      flash[:error] = "Your profile deleted"
+      flash[:notice] = "Your profile deleted"
       redirect_to root_path
     else
       flash[:error] = "You are not authorized to preform this function."
