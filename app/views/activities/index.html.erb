@@ -19,4 +19,8 @@
 
 <br><%= link_to "back to profile", user_path(current_user), class: "btn btn-default"%><br>
 
-<%= will_paginate @activities %>
+
+
+<nav data-pagination>
+	<%= will_paginate @activities %>
+</nav>
