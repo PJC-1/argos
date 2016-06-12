@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def index
     @users = User.all.paginate(:page => params[:page], :per_page => 10)
     render :index
@@ -29,7 +28,7 @@ class UsersController < ApplicationController
     if current_user != nil
       render :show
     else
-      flash[:error] = "You are not authorized to preform this function."
+      flash[:error] = "You need to be signed in to preform this function."
       redirect_to users_path
     end
   end
@@ -39,7 +38,7 @@ class UsersController < ApplicationController
     if current_user == @user
       render :edit
     else
-      flash[:error] = "You are not authorized to preform this function."
+      flash[:error] = "You need to be signed in to preform this function."
       redirect_to root_path
     end
   end
