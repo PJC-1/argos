@@ -25,30 +25,36 @@ header .header-content .header-content-inner h1 {
     margin-bottom: 0;
     text-transform: uppercase;
     font-family: 'Work Sans', sans-serif;
-    font-weight: 900;
     color: tan;
-    text-shadow: 6px 6px black;
 }
 
 
-@media (min-width: 350px) {
+@media (min-width: 300px) {
   .honetitle {
-    font-size: 60px;
+    font-size: 75px;
+    text-shadow: 3px 3px black;
+    font-weight: 800;
   }
 }
 @media (min-width: 500px) {
   .honetitle {
-    font-size: 84px;
+    font-size: 110px;
+    text-shadow: 4px 4px black;
+    font-weight: 800;
   }
 }
 @media (min-width: 700px) {
   .honetitle {
-    font-size: 120px;
+    font-size: 140px;
+    text-shadow: 5px 6px black;
+    font-weight: 900;
   }
 }
 @media (min-width: 900px) {
   .honetitle {
-    font-size: 150px;
+    font-size: 165px;
+    text-shadow: 6px 6px black;
+    font-weight: 900;
   }
 }
 
