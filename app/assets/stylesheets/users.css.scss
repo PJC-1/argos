@@ -26,10 +26,30 @@ header .header-content .header-content-inner h1 {
     text-transform: uppercase;
     font-family: 'Work Sans', sans-serif;
     font-weight: 900;
-    font-size: 140px;
     color: tan;
     text-shadow: 6px 6px black;
-    max-width: auto;
+}
+
+
+@media (min-width: 350px) {
+  .honetitle {
+    font-size: 60px;
+  }
+}
+@media (min-width: 500px) {
+  .honetitle {
+    font-size: 84px;
+  }
+}
+@media (min-width: 700px) {
+  .honetitle {
+    font-size: 120px;
+  }
+}
+@media (min-width: 900px) {
+  .honetitle {
+    font-size: 150px;
+  }
 }
 
 .worksans {
