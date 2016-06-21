@@ -9,7 +9,7 @@ class PetAvatarUploader < CarrierWave::Uploader::Base
 
   version :display do
     process :eager => true
-    process :resize_to_fill => [300, 350, :north]
+    process :resize_to_fill => [250, 300, :north]
   end
 
   version :thumbnail do
