@@ -1,10 +1,17 @@
+<header class="banner">
+	<h1>Login</h1>
+</header>
+<br>
 <div class="container">
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4">
       <div class="light-well">
-        <h2 class="page-header text-center">Log In</h2>
+        <h2 class="page-header text-center">Login Info</h2>
 
         <%= form_for @user, url: login_path, as: 'user' do |f| %>
+          <p>
+            NOTE* if you want to browse Argos and see what it's all about, feel free to just sign in as the TEST USER (simply press the "Sign In" button below).
+          </p>
 
           <div class="form-group form-control">
             <%= f.text_field :email, placeholder: "Email", :value => "testemail@gmail.com" %>
