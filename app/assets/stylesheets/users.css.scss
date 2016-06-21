@@ -5,8 +5,8 @@ header {
     text-align: center;
     color: #000000;
     background-image: url(https://images.unsplash.com/reserve/UzWklzFdRBSbkRKhEnvc_1-6128.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=7640fe4660acee3fa5bb00f8880ae46c);
-    background-position: center -75px;
-    background-attachment: fixed;
+    background-position: center;
+    background-attachment: initial;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -55,6 +55,7 @@ header .header-content .header-content-inner h1 {
     font-size: 140px;
     text-shadow: 6px 6px black;
     font-weight: 900;
+    padding-top: 275px;
   }
 }
 
