@@ -22,7 +22,6 @@ body {
 .activity-feed {
 	list-style-type: none;
 	padding: 0;
-	margin: 50px 50px 50px 60px;
 	.feed-item {
 		position: relative;
 		min-height: 60px;
@@ -75,7 +74,6 @@ body {
 			}
 			label {
 				display: block;
-        font-size: 25px;
 				// &:after {
 				// 	content: "\f067";
 				// 	position: absolute;
@@ -133,6 +131,74 @@ input[type="checkbox"] {
 [data-color=blue] { &:after { background-color: #2cb5e8 !important; } }
 [data-color=green] { &:after { background-color: #47cf73 !important; } }
 [data-color=yellow] { &:after { background-color: #fcd000 !important; } }
+
+@media (min-width: 320px) {
+  .activity-feed {
+    margin: 50px 0px 50px 3px;
+		.feed-item {
+			&::after {
+				display: none;
+			}
+			section label {
+				font-size: 12px;
+			}
+			.glyphicon {
+				font-size: 14px;
+			}
+			img {
+				height: 43px;
+			}
+		}
+  }
+}
+@media (min-width: 500px) {
+  .activity-feed {
+    margin: 50px 25px 50px 60px;
+		.feed-item {
+			section label {
+				font-size: 18px;
+			}
+			.glyphicon {
+				font-size: 22px;
+			}
+			img {
+				height: 50px;
+			}
+		}
+  }
+}
+@media (min-width: 700px) {
+  .activity-feed {
+    margin: 50px 40px 50px 50px;
+		.feed-item {
+			section label {
+				font-size: 25px;
+			}
+			.glyphicon {
+				font-size: 30px;
+			}
+			img {
+				height: 100px;
+			}
+		}
+  }
+}
+@media (min-width: 900px) {
+  .activity-feed {
+    margin: 50px 20px 50px 100px;
+		.feed-item {
+			section label {
+				font-size: 35px;
+			}
+			.glyphicon {
+				font-size: 36px;
+			}
+			img {
+				height: 125px;
+			}
+		}
+  }
+}
 
 
 [data-pagination],
