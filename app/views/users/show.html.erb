@@ -1,5 +1,9 @@
 <header class="banner">
-	<h1>Howdy, <%=@user.first_name%></h1>
+	<% if current_user.id == @user.id %>
+		<h1>Howdy, <%= @user.first_name %></h1>
+	<% else %>
+		<h1>Welcome to <%= @user.first_name %>'s Page</h1>
+	<% end %>
 </header>
 <br>
 
@@ -26,7 +30,11 @@
 
 
 	<div class="leftColumn">
-		<h3 class="section-subheading text-muted fontweightone">Welcome back <%= @user.first_name %>.</h3>
+		<% if current_user.id == @user.id %>
+			<h3 class="section-subheading text-muted fontweightone">Welcome back <%= @user.first_name %>.</h3>
+		<% else %>
+			<h3><%= @user.first_name %></h3>
+		<% end %>
 		<br>
 		<p>Following:
 			<div class="transitions-enabled" id="pets">
