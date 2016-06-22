@@ -185,3 +185,30 @@ body { margin: 0; }
 
 	.rightColumn { position: absolute; top: 0; right: 0; width: 33.75em; }
 }
+
+
+
+
+
+
+
+
+#box-follower {
+  margin: 3px;
+  width: 125px;
+  panel-body {
+    font-size: 20px;
+  }
+}
+
+#box-follower img {
+  width: 100%;
+  box-shadow: 2px 2px 2px #888888;
+  -webkit-box-shadow: 2px 2px 2px #888888;
+}
+#box-follower img:hover{
+  opacity: 0.6;
+}
+#follower-user-img {
+  border-radius: 50%;
+}

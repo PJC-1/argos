@@ -29,10 +29,16 @@
 		<h3 class="section-subheading text-muted fontweightone">Welcome back <%= @user.first_name %>.</h3>
 		<br>
 		<p>Following:
-			<% @user.all_following.each do |follow| %>
-				<strong><%= follow.first_name %></strong>
-				<%= link_to cl_image_tag(follow.avatar_url(:thumbnail)), "/users/#{follow.id}" %>
-			<% end %>
+			<div class="transitions-enabled" id="pets">
+				<% @user.all_following.each do |follow| %>
+				<div class="box panel panel-default" id="box-follower">
+					<%= link_to cl_image_tag(follow.avatar_url(:thumbnail)), "/users/#{follow.id}" %>
+					<div class="panel-body">
+						<strong><%= follow.first_name %></strong><br>
+					</div>
+				</div>
+				<% end %>
+			</div>
 		</p>
 
 		<div class="inline">
@@ -42,6 +48,15 @@
 		    <p class="inline"><%= link_to "all pets", user_pets_path(@user), class: "btn btn-default" %></p>
 		  <% end %>
 		</div>
+
+
+
+
+
+
+
+
+
 
 	</div>
 </div>
