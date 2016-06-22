@@ -25,8 +25,7 @@ body {
 	.feed-item {
 		position: relative;
 		min-height: 60px;
-		margin-bottom: 25px;
-		padding-left: 30px;
+		margin-bottom: 30px;
 		border-left: 2px solid #ddd;
     &:last-child { border-color: transparent; }
 		&:before {
@@ -136,6 +135,7 @@ input[type="checkbox"] {
   .activity-feed {
     margin: 50px 0px 50px 3px;
 		.feed-item {
+			padding-left: 5px;
 			&::after {
 				display: none;
 			}
