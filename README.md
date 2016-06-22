@@ -23,7 +23,7 @@
 - Activity-feed with other users
 
 
-### Additional Gems
+### Gems
 - gem 'masonry-rails'
 - gem 'bootstrap-sass'
 - gem 'carrierwave'
