@@ -8,8 +8,9 @@
   	<li class="feed-item" data-content="" data-time="<%= activity.created_at.strftime('%l:%M %B %-d') %>" data-color="green">
   		<section>
   			<label for="expand_4">
-  				<b><%= link_to cl_image_tag(activity.owner.avatar_url(:thumbnail)), activity.owner if activity.owner %>&nbsp;<%= link_to activity.owner.first_name, activity.owner if activity.owner %>&nbsp;</b>
-          <%= render_activity activity %>
+					<%= link_to cl_image_tag(activity.owner.avatar_url(:thumbnail)), activity.owner if activity.owner %>
+					<b><%= link_to activity.owner.first_name, activity.owner if activity.owner %>&nbsp;</b>
+					<%= render_activity activity %>
   			</label>
   		</section>
   	</li>
