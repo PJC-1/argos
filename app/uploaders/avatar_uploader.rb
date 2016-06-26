@@ -9,12 +9,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   version :display do
     process :eager => true
-    process :resize_to_fill => [250, 300, :north]
+    process :resize_to_fill => [250, 250, :north]
   end
 
   version :thumbnail do
     process :eager => true
-    process :resize_to_fit => [125, 150]
+    process :resize_to_fit => [125, 125]
   end
 
   # Include RMagick or MiniMagick support:

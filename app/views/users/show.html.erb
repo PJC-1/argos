@@ -11,7 +11,7 @@
 
 	<div class="rightColumn">
 		<h2><%=@user.first_name%> <%= @user.last_name %></h2>
-		<%= image_tag @user.avatar_url(:display) %>
+		<%= image_tag @user.avatar_url(:display), class: "img-circle" %>
 		<br>
 		<p class="text-muted fontweightone">Followers: <strong><%= @user.followers_count %></strong></p>
 		<p class="text-muted fontweightone">Follows: <strong><%= @user.follow_count %></strong></p>
@@ -40,7 +40,7 @@
 			<div class="transitions-enabled" id="pets">
 				<% @user.all_following.each do |follow| %>
 				<div class="box panel panel-default" id="box-follower">
-					<%= link_to cl_image_tag(follow.avatar_url(:thumbnail)), "/users/#{follow.id}" %>
+					<%= link_to cl_image_tag(follow.avatar_url(:thumbnail)), "/users/#{follow.id}"  %>
 					<div class="panel-body">
 						<strong><%= follow.first_name %></strong><br>
 					</div>
@@ -48,7 +48,7 @@
 				<% end %>
 			</div>
 		</p>
-
+		<hr>
 		<div class="inline">
 		  <% if current_user.id == @user.id %>
 		    <p class="inline"><%= link_to "add a pet", new_user_pet_path(@user), class: "btn btn-default" %><%= link_to "all pets", user_pets_path(@user), class: "btn btn-default" %><%= link_to "calendar", user_events_path(@user), class: "btn btn-default" %></p>
