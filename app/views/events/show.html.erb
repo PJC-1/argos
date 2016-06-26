@@ -1,6 +1,9 @@
-<h1>Show Event</h1>
+<header class="banner">
+	<h1><%= @event.published_on %></h1>
+</header>
+<br>
 <hr>
-<p><strong>Name:</strong> <%= @event.name %></p>
+<p><strong>Event:</strong> <%= @event.name %></p>
 <p><strong>Published On:</strong> <%= @event.published_on %></p>
 <p><strong>Content:</strong> <%= @event.content %></p>
 <hr>
@@ -8,4 +11,4 @@
 <p><%= link_to "edit event", edit_user_event_path(@user, @event) %></p>
 <p><%= link_to "delete event", user_event_path(@user, @event), method: :delete %></p>
 <hr>
-<p><%= link_to "view all events for owner #{@user.email}", user_events_path(@user) %></p>
+<p><%= link_to "#{@user.first_name}'s Calendar", user_events_path(@user) %></p>
