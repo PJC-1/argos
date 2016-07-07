@@ -5,7 +5,7 @@
 
 <div class="transitions-enabled" id="pets">
 	<% @users.each do |user| %>
-	    <div class="box panel panel-default">
+	    <div class="box panel panel-default" id="box-follower">
 				<%= link_to cl_image_tag(user.avatar_url(:thumbnail)), "/users/#{user.id}" %>
 	      <div class="panel-body">
 	      	<strong>Name: </strong><%= user.first_name %><br>
