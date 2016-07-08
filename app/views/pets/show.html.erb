@@ -14,10 +14,10 @@
     <p><%= link_to "EDIT PET", edit_user_pet_path(@user, @pet), class: "btn btn-info"  %></p>
     <p><%= link_to "DELETE PET", user_pet_path(@user, @pet), method: :delete, class: "btn btn-info"  %></p>
     <p><%= link_to "UPLOAD PICTURE", new_pet_picture_path(@pet), class: "btn btn-info"  %></p>
-    <p><%= link_to "#{@pet.name}'PICTURES ", pet_pictures_path(@pet), class: "btn btn-info" %></p>
+    <p><%= link_to "#{@pet.name}'S PICTURES", pet_pictures_path(@pet), class: "btn btn-info" %></p>
     <p><%= link_to "ALL #{@user.first_name}'s PETS", user_pets_path(@user), class: "btn btn-info"  %></p>
   <% else %>
     <p><%= link_to "#{@pet.name}'s PICTURES", pet_pictures_path(@pet), class: "btn btn-info"  %></p>
-    <p><%= link_to "ALL #{@user.first_name}'s PETS", user_pets_path(@user), class: "btn btn-info"  %></p>
+    <p><%= link_to "ALL #{@user.first_name}'S PETS", user_pets_path(@user), class: "btn btn-info"  %></p>
   <% end %>
 </div>
