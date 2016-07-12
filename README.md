@@ -8,6 +8,7 @@
 
 ### Technologies
 - Ruby on Rails
+- Rspec
 - Bootstrap
 - PostgresSQL database
 - Cloudinary API
@@ -24,6 +25,9 @@
 
 
 ### Gems
+- gem 'rspec-rails'
+- gem 'factory_girl_rails'
+- gem 'ffaker'
 - gem 'masonry-rails'
 - gem 'bootstrap-sass'
 - gem 'carrierwave'

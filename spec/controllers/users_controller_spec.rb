@@ -13,4 +13,15 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to render_template(:index)
     end
   end
+  describe "#new" do
+    before { get :new }
+
+    it "assigns @user" do
+      expect(assigns(:user)).to be_instance_of(User)
+    end
+
+    it "renders the :new view" do
+      expect(response).to render_template(:new)
+    end
+  end
 end
