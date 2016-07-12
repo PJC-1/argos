@@ -24,4 +24,46 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to render_template(:new)
     end
   end
+  describe "#create" do
+    context "on success" do
+      let!(:users_count) { User.count }
+
+      before do
+        user_hash = {
+          first_name: FFaker::Name.first_name,
+          last_name: FFaker::Name.last_name ,
+          password: "123456",
+          email: FFaker::Internet.email
+        }
+        post :create, user: user_hash
+      end
+
+      it "adds the new user to the database" do
+        expect(User.count).to eq(users_count + 1)
+      end
+
+      it "redirects to 'user_path'" do
+        expect(response.status).to be(302)
+        expect(response.location).to match(/\/users\/\d+/)
+      end
+    end
+    context "failed validations" do
+      before do
+        post :create, user: {
+          first_name: nil,
+          last_name: nil,
+          password: nil,
+          email: nil
+        }
+      end
+      it "adds a flash error message" do
+        expect(flash[:error]).to be_present
+      end
+      it "redirects to 'new_user_path'" do
+        expect(response.status).to be(302)
+        expect(response).to redirect_to(new_user_path)
+      end
+    end
+  end
+
 end
