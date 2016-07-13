@@ -65,5 +65,20 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
+  describe "#show" do
+    context "on success" do
+      let(:user) { FactoryGirl.create(:user) }
+      let(:current_user) { user }
+      before do
+        get :show, id: user.id
+      end
 
+      it "assigns @user" do
+        expect(assigns(:user)).to eq(user)
+      end
+      it "compares current_user to not equal nil" do
+        expect(current_user).to be_present
+      end
+    end
+  end
 end
